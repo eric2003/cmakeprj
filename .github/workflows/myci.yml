@@ -35,5 +35,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: echo system varname
-        run: echo Hello, ${ github.workspace }!
+        run: echo Hello, "${github.workspace}"!
       
