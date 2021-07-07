@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: OneFLOW_CI
 
 # Controls when the workflow will run
 on:
@@ -25,38 +25,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: echo system varname
-        run: echo Hello, "$github.workspace"!
-      - name: Print a greeting
-        env:
-          MY_VAR: Hello, OneFLOW CFD!
-        run:
-          echo $MY_VAR
-      - name: echo system varname again
-        run: echo Hello, $github.workspace!
-      - name: echo system varname again 1
-        run: echo Hello, ${{ github.workspace }}!      
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      # Echo github context
       - name: echo github context
         run: |
           echo "github.workspace is ${{ github.workspace }}."
           echo "github.workflow is ${{ github.workflow }}."
           echo "github.repository is ${{ github.repository }}."
+          echo "github.action is ${{ github.action }}."
+          echo "github.action_path is ${{ github.action_path }}."
+          echo "github.actor is ${{ github.actor }}."
+          echo "github.base_ref is ${{ github.base_ref }}."
+          echo "github.event_name is ${{ github.event_name }}."
+          echo "github.event_path is ${{ github.event_path }}."
+
       
