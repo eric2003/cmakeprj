@@ -38,12 +38,9 @@ jobs:
         run: echo Hello, "$github.workspace"!
       - name: Print a greeting
         env:
-          MY_VAR: Hi there! My name is
-          FIRST_NAME: Mona
-          MIDDLE_NAME: The
-          LAST_NAME: Octocat
+          MY_VAR: Hello, OneFLOW CFD!
         run:
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+          echo $MY_VAR
       - name: echo system varname again
         run: echo Hello, $github.workspace!
       - name: echo system varname again 1
