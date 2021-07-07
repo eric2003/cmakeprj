@@ -44,5 +44,8 @@ jobs:
           echo "github.sha is ${{ github.sha }}."
           echo "github.token is ${{ github.token }}."
           echo "github.workflow is ${{ github.workflow }}."
-          echo "github.workspace is ${{ github.workspace }}."          
+          echo "github.workspace is ${{ github.workspace }}."   
+          echo "github is ${{ github }}."
+          echo "github.event is ${{ github.event }}."
+
       
