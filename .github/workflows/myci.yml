@@ -55,5 +55,5 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: echo github.name
-        run: echo "github.name is ${{ github.name }}."
+        run: echo "github.name is ${{ GITHUB_WORKFLOW }}."
       
