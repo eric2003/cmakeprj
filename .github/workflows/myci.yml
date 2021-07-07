@@ -46,4 +46,6 @@ jobs:
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
       - name: echo system varname again
         run: echo Hello, $github.workspace!
+      - name: echo system varname again 1
+        run: echo Hello, ${github.workspace}!        
       
