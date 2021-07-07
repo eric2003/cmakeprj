@@ -47,5 +47,5 @@ jobs:
       - name: echo system varname again
         run: echo Hello, $github.workspace!
       - name: echo system varname again 1
-        run: echo Hello, ${github.workspace}!        
+        run: echo Hello, ${{ github.workspace }}!        
       
