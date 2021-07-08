@@ -22,11 +22,11 @@ jobs:
       matrix:
         config:
         - {
-            name: "Windows ",
+            name: "Windows OneFLOW CFD",
             os: windows-latest,
           }
         - {
-            name: "Ubuntu",
+            name: "Ubuntu OneFLOW CFD",
             os: ubuntu-latest,
           }        
     steps:
@@ -39,6 +39,11 @@ jobs:
       - name: Display matrix.config.name by bath
         run: echo ${{ matrix.config.name }}
         shell: bash  
+      - name: Display github.workspace by pwsh
+        run: |
+          echo "github.workspace is ${{ github.workspace }}."  
+          ls ${{ github.workspace }}
+        shell: pwsh
       - name: Display github.workspace by bath
         run: |
           echo "github.workspace is ${{ github.workspace }}."  
