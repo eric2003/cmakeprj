@@ -18,7 +18,6 @@ jobs:
   my_job1:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
       matrix:
         os: [ ubuntu-latest, windows-latest]   
     steps:
@@ -28,7 +27,7 @@ jobs:
       - name: Display the path by bath
         run: echo $PATH
         shell: bash  
-      - name: Display the path by bath
+      - name: Display github.workspace by bath
         run: |
           echo "github.workspace is ${{ github.workspace }}."  
           ls ${{ github.workspace }}
