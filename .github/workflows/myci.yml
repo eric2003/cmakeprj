@@ -16,10 +16,19 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   my_job1:
-    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}  
     strategy:
       matrix:
-        os: [ windows-latest, ubuntu-latest, macos-latest ]   
+        config:
+        - {
+            name: "Windows ",
+            os: windows-latest,
+          }
+        - {
+            name: "Ubuntu",
+            os: ubuntu-latest,
+          }        
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
