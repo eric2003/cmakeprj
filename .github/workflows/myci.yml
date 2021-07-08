@@ -16,28 +16,37 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   my_job1:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ windows-latest, ubuntu-latest]  
+    runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Run echo Hello, world!
-        run: echo "Hello, world!"   
-
-      # Runs a single command using the runners shell
-      - name: Print system info
+      - name: Display the path by bath
+        run: echo $PATH
+        shell: bash      
+  my_job2:      
+    runs-on: windows-latest
+    steps:
+      - name: Display the path by cmd
+        run: echo %PATH%
+        shell: cmd      
+  my_job3:      
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest] 
+    steps:
+      - name: Display the path by pwsh
+        run: echo ${env:PATH}
+        shell: pwsh
+   my_job4:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]   
+      - name: Display the path by python
         run: |
-          echo $PATH
-          node -v
-          npm -v
-          python --version
-          java --version
-          go version
-          mvn -version
-          docker version
-          docker-compose -v
-          git version
-      
+          import os
+          print(os.environ['PATH'])
+        shell: python    
+  
