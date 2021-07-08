@@ -31,15 +31,12 @@ jobs:
         run: echo %PATH%
         shell: cmd      
   my_job3:      
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest] 
+    runs-on: windows-latest
     steps:
       - name: Display the path by pwsh
         run: echo ${env:PATH}
-        shell: pwsh
-   my_job4:
+        shell: pwsh        
+  my_job4:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
