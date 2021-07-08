@@ -19,38 +19,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest]    
+        os: [ ubuntu-latest, windows-latest]    
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
       - name: Display the path by bath
         run: echo $PATH
-        shell: bash      
-  my_job2:      
-    runs-on: windows-latest
-    steps:
-      - name: Display the path by cmd
-        run: echo %PATH%
-        shell: cmd      
-  my_job3:      
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest]    
-    steps:
-      - name: Display the path by pwsh
-        run: echo ${env:PATH}
-        shell: pwsh        
-  my_job4:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest]    
-    steps:
-      - name: Display the path by python
+        shell: bash  
+      - name: Display the path by bath
         run: |
-          import os
-          print(os.environ['PATH'])
-        shell: python    
-  
+          echo "github.workspace is ${{ github.workspace }}."  
+          ls ${{ github.workspace }}
+        shell: bash
+        
