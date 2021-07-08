@@ -23,30 +23,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run echo github.action
-        run: echo "github.action is ${{ github.action }}."
-      - name: Run echo github.action_path
-        run: echo "github.action_path is ${{ github.action_path }}."   
+      
       - name: Run echo Hello, world!
         run: echo "Hello, world!"   
-  my_job2:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, windows-latest]    
-    steps:
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.  
-      - name: Run a modified multi-line script 
-        run: |
-          echo "Add other actions to build,"
-          echo "test, and deploy your project."
 
+      # Runs a single command using the runners shell
+      - name: Print system info
+        run: |
+          echo $PATH
+          node -v
+          npm -v
+          python --version
+          java --version
+          go version
+          mvn -version
+          docker version
+          docker-compose -v
+          git version
       
