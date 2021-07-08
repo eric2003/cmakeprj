@@ -18,8 +18,9 @@ jobs:
   my_job1:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        os: [ ubuntu-latest, windows-latest]    
+        os: [ ubuntu-latest, windows-latest]   
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
