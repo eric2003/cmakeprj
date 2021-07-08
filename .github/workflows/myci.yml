@@ -36,6 +36,9 @@ jobs:
       - name: Display the path by bath
         run: echo $PATH
         shell: bash  
+      - name: Display matrix.config.name by bath
+        run: echo ${{ matrix.config.name }}
+        shell: bash  
       - name: Display github.workspace by bath
         run: |
           echo "github.workspace is ${{ github.workspace }}."  
