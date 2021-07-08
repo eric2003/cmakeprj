@@ -27,6 +27,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+      - name: Run echo github.action
+        run: echo "github.action is ${{ github.action }}."
+      - name: Run echo github.action_path
+        run: echo "github.action_path is ${{ github.action_path }}."   
+      - name: Run echo Hello, world!
+        run: echo "Hello, world!"   
   my_job2:
     runs-on: ${{ matrix.os }}
     strategy:
