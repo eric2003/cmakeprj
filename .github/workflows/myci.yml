@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Display the path by pwsh
-        run: echo $PATH
+        run: echo ${env:PATH}
         shell: pwsh  
       - name: Display github.workspace by pwsh
         run: |

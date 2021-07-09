@@ -20,5 +20,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display the path by pwsh
-        run: echo $PATH
+        run: echo ${env:PATH}
         shell: pwsh  
