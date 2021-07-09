@@ -59,7 +59,8 @@ jobs:
           cmake --version
           cmake ../
           ls
-          cmake --build . --config release
+          #cmake --build . --config release
+          cmake --build . --target INSTALL --config release
           echo "env.my_var1 is ${{ env.my_var1 }}."  
           echo "env.my_var2 is ${{ env.my_var2 }}."  
           echo "matrix.config.prefix is ${{ matrix.config.prefix }}."  
