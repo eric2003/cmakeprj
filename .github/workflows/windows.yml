@@ -41,6 +41,7 @@ jobs:
       - name: CMake Install
         env:
           prefix: "C:/Program Files (x86)/CMakePrj/"
+          prefix1: "C:/Program Files (x86)/CMakePrj/bin/"
         run: |
           cd ${{ github.workspace }}/build
           ls
@@ -48,5 +49,7 @@ jobs:
           ls "${{env.prefix}}"
           cd "${{env.prefix}}bin"
           ls
-          "${{env.prefix}}bin/""CMakePrj.exe"
+          echo "${{env.prefix}}bin/""CMakePrj.exe"
+          echo "${{env.prefix1}}""CMakePrj.exe"
+          "${{env.prefix1}}""CMakePrj.exe"
         shell: pwsh
