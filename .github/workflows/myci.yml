@@ -27,7 +27,7 @@ jobs:
         - {
             name: "Windows OneFLOW CFD",
             os: windows-latest,
-            prefix : "C:/Program Files(x86)/CMakePrj/",            
+            prefix : "C:/Program Files (x86)/CMakePrj/",            
           }
         - {
             name: "Ubuntu OneFLOW CFD",
