@@ -62,6 +62,6 @@ jobs:
           echo "env.my_var1 is ${{ env.my_var1 }}."  
           echo "env.my_var2 is ${{ env.my_var2 }}."  
           echo "matrix.config.prefix is ${{ matrix.config.prefix }}."  
-          ls ${{ matrix.config.prefix }}
+          ls "${{ matrix.config.prefix }}"
         shell: pwsh
         
