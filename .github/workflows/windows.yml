@@ -55,5 +55,7 @@ jobs:
           echo ${{env.MY_VAR}}
           echo "${{env.MY_VAR}}"
           echo "${{env.prefix}}"
+          ls
+          cmake --build . --target INSTALL --config release
           ls "${{env.prefix}}"
         shell: pwsh
