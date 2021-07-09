@@ -46,5 +46,7 @@ jobs:
           ls
           cmake --build . --target INSTALL --config release
           ls "${{env.prefix}}"
-          "${{env.prefix}}/bin/CMakePrj.exe"
+          cd "${{env.prefix}}bin
+          ls
+          "${{env.prefix}}bin/CMakePrj.exe"
         shell: pwsh
