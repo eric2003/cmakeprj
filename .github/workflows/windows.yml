@@ -48,5 +48,5 @@ jobs:
           ls "${{env.prefix}}"
           cd "${{env.prefix}}bin"
           ls
-          "${{env.prefix}}bin/CMakePrj.exe"
+          ${{env.prefix}}bin/CMakePrj.exe
         shell: pwsh
