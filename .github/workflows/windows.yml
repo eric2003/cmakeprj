@@ -49,8 +49,11 @@ jobs:
           FIRST_NAME: Mona
           MIDDLE_NAME: The
           LAST_NAME: Octocat
+          prefix: "C:/Program Files (x86)/CMakePrj/"
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.  
           echo ${{env.MY_VAR}}
           echo "${{env.MY_VAR}}"
+          echo "${{env.prefix}}"
+          ls ${{env.prefix}}
         shell: pwsh
