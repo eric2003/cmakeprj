@@ -27,13 +27,13 @@ jobs:
         - {
             name: "Windows OneFLOW CFD",
             os: windows-latest,
-            #prefix : "C:/Program Files (x86)/CMakePrj/",            
-            prefix : "C:/Program Files (x86)/",            
+            prefix : "C:/Program Files (x86)/CMakePrj/",            
+            #prefix : "C:/Program Files (x86)/",            
           }
         - {
             name: "Ubuntu OneFLOW CFD",
             os: ubuntu-latest,
-            prefix : "/usr/local/",            
+            prefix : "/usr/local/CMakePrj/",            
           }        
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
