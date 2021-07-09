@@ -38,27 +38,11 @@ jobs:
           cmake ../
           ls
         shell: pwsh
-  install:
-    needs: build
-    name: "Windows OneFLOW CFD install"
-    runs-on: windows-latest
-    steps:
       - name: CMake Install
         env:
-          MY_VAR: Hi there! My name is
-          FIRST_NAME: Mona
-          MIDDLE_NAME: The
-          LAST_NAME: Octocat
           prefix: "C:/Program Files (x86)/CMakePrj/"
-          mybuild: ${{ github.workspace }}/build
         run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.  
-          echo ${{env.MY_VAR}}
-          echo "${{env.MY_VAR}}"
-          echo "${{env.prefix}}"
-          pwd
           ls
-          cd ${{ github.workspace }}/build
           cmake --build . --target INSTALL --config release
           ls "${{env.prefix}}"
         shell: pwsh
