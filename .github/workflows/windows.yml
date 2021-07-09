@@ -45,10 +45,10 @@ jobs:
     steps:
       - name: CMake Install
         env:
-          prefix: "C:/Program Files (x86)/CMakePrj/"
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
         run: |
-          echo $prefix
-          ls
-          cmake --build . --target INSTALL --config release
-          ls "${{ prefix }}"
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.      
         shell: pwsh
