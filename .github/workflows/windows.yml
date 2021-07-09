@@ -30,7 +30,7 @@ jobs:
         shell: pwsh
       - name: CMake Build
         run: |
-          cd ${{ github.workspace }}
+          cccccd ${{ github.workspace }}
           ls
           mkdir build
           cd build
