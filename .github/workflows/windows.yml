@@ -55,5 +55,5 @@ jobs:
           echo ${{env.MY_VAR}}
           echo "${{env.MY_VAR}}"
           echo "${{env.prefix}}"
-          ls ${{env.prefix}}
+          ls "${{env.prefix}}"
         shell: pwsh
