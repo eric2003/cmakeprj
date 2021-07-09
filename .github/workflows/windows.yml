@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: CMake Install
         env:
-          prefix : "C:/Program Files (x86)/CMakePrj/",  
+          prefix : "C:/Program Files (x86)/CMakePrj/"
         run: |
           echo $prefix
           ls
