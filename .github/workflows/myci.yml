@@ -44,9 +44,11 @@ jobs:
           echo "github.workspace is ${{ github.workspace }}."  
           ls ${{ github.workspace }}
         shell: pwsh
-      - name: Display github.workspace by bath
+      - name: Display cd github.workspace by pwsh
         run: |
           echo "github.workspace is ${{ github.workspace }}."  
           ls ${{ github.workspace }}
-        shell: bash
+          cd ${{ github.workspace }}
+          ls
+        shell: pwsh
         
