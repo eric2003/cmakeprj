@@ -51,5 +51,7 @@ jobs:
           mkdir build
           cd build
           cmake --version
+          cmake ../
+          ls
         shell: pwsh
         
