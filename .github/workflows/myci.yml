@@ -27,7 +27,8 @@ jobs:
         - {
             name: "Windows OneFLOW CFD",
             os: windows-latest,
-            prefix : "C:/Program Files (x86)/CMakePrj/",            
+            #prefix : "C:/Program Files (x86)/CMakePrj/",            
+            prefix : "C:/Program Files (x86)/",            
           }
         - {
             name: "Ubuntu OneFLOW CFD",
@@ -38,9 +39,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Display the path by bath
+      - name: Display the path by pwsh
         run: echo $PATH
-        shell: bash  
+        shell: pwsh  
       - name: Display matrix.config.name by bath
         run: echo ${{ matrix.config.name }}
         shell: bash  
