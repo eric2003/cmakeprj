@@ -15,10 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  my_job1:
-    env:
-      my_var1: 1
-      my_var2: 2
+  build:
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}  
     strategy:
@@ -36,15 +33,11 @@ jobs:
             prefix : "/usr/local/CMakePrj/",            
           }        
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
       - name: Display the path by pwsh
         run: echo $PATH
         shell: pwsh  
-      - name: Display matrix.config.name by bath
-        run: echo ${{ matrix.config.name }}
-        shell: bash  
       - name: Display github.workspace by pwsh
         run: |
           echo "github.workspace is ${{ github.workspace }}."  
@@ -59,11 +52,4 @@ jobs:
           cmake --version
           cmake ../
           ls
-          #cmake --build . --config release
-          cmake --build . --target INSTALL --config release
-          echo "env.my_var1 is ${{ env.my_var1 }}."  
-          echo "env.my_var2 is ${{ env.my_var2 }}."  
-          echo "matrix.config.prefix is ${{ matrix.config.prefix }}."  
-          ls "${{ matrix.config.prefix }}"
         shell: pwsh
-        
