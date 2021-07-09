@@ -50,5 +50,7 @@ jobs:
           MIDDLE_NAME: The
           LAST_NAME: Octocat
         run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.      
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.  
+          echo ${{MY_VAR}}
+          echo "${{MY_VAR}}"
         shell: pwsh
