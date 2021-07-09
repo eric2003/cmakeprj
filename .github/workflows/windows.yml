@@ -50,5 +50,5 @@ jobs:
           cd "${{env.prefix}}/bin"
           ls
           echo "${{env.prefix}}/bin"
-          "${{env.prefix1}}""/CMakePrj.exe"
+          "${{env.prefix1}}"/CMakePrj.exe
         shell: pwsh
