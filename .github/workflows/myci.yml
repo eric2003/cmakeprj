@@ -47,7 +47,6 @@ jobs:
       - name: Display cd github.workspace by pwsh
         run: |
           echo "github.workspace is ${{ github.workspace }}."  
-          ls ${{ github.workspace }}
           cd ${{ github.workspace }}
           ls
         shell: pwsh
