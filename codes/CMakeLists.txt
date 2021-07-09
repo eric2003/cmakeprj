@@ -49,3 +49,5 @@ message(STATUS "The executable name is ${EXECUTABLE_TARGET_NAME}.")
 #. add an executable to the project using the specified source files and header files:
 add_executable( ${EXECUTABLE_TARGET_NAME} ${SRC_LIST} ${HEAD_LIST} ) 
 
+install(TARGETS ${EXECUTABLE_TARGET_NAME} RUNTIME DESTINATION bin)
+
