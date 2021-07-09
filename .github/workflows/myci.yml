@@ -27,12 +27,12 @@ jobs:
         - {
             name: "Windows OneFLOW CFD",
             os: windows-latest,
-            prefix : "/usr/local/",
+            prefix : "C:/Program Files(x86)/CMakePrj/",            
           }
         - {
             name: "Ubuntu OneFLOW CFD",
             os: ubuntu-latest,
-            prefix : "C:/Program Files(x86)/CMakePrj/",
+            prefix : "/usr/local/",            
           }        
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -62,5 +62,6 @@ jobs:
           echo "env.my_var1 is ${{ env.my_var1 }}."  
           echo "env.my_var2 is ${{ env.my_var2 }}."  
           echo "matrix.config.prefix is ${{ matrix.config.prefix }}."  
+          ls ${{ matrix.config.prefix }}
         shell: pwsh
         
