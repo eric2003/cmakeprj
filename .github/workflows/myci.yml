@@ -16,6 +16,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   my_job1:
+    env:
+      my_var1: 1
+      my_var2: 2
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}  
     strategy:
@@ -54,5 +57,7 @@ jobs:
           cmake ../
           ls
           cmake --build . --config release
+          echo "env.my_var1 is ${{ env.my_var1 }}."  
+          echo "env.my_var2 is ${{ env.my_var2 }}."  
         shell: pwsh
         
