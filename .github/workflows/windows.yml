@@ -28,6 +28,13 @@ jobs:
           echo "github.workspace is ${{ github.workspace }}."  
           ls ${{ github.workspace }}
         shell: pwsh
+      - name: Install MSMPI
+        run: |
+          cd ${{ github.workspace }}
+          ls
+          $myStr = "this is string variables"
+          $myStr
+        shell: pwsh
       - name: CMake Build
         run: |
           cd ${{ github.workspace }}
@@ -50,6 +57,6 @@ jobs:
           ls
           ./CMakePrj.exe
           python --version
-          mpiexec
+          #mpiexec
        
         shell: pwsh
