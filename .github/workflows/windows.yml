@@ -37,7 +37,7 @@ jobs:
           $psfile = "${{ github.workspace }}/.github/workflows/test.ps1"
           $psfile_dir = "${{ github.workspace }}/.github/workflows/"
           ls $psfile_dir
-          $psfile
+          powershell $psfile
         shell: pwsh
       - name: CMake Build
         run: |
