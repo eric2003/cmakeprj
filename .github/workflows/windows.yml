@@ -34,8 +34,9 @@ jobs:
           ls
           $myStr = "this is string variables"
           $myStr
-          $psfile = ${{ github.workspace }}/.github/workflows/test.ps1
-          $psfile
+          #$psfile = "${{ github.workspace }}/.github/workflows/test.ps1"
+          $psfile = "${{ github.workspace }}/.github/workflows/"
+          ls $psfile
         shell: pwsh
       - name: CMake Build
         run: |
