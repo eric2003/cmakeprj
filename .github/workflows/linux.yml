@@ -50,4 +50,5 @@ jobs:
           cd "${{env.prefix}}/bin"
           ls
           ./CMakePrj
+          python --version
         shell: pwsh

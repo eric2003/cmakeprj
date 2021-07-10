@@ -30,7 +30,7 @@ jobs:
         shell: pwsh
       - name: CMake Build
         run: |
-          cccccd ${{ github.workspace }}
+          cd ${{ github.workspace }}
           ls
           mkdir build
           cd build
@@ -49,4 +49,5 @@ jobs:
           cd "${{env.prefix}}/bin"
           ls
           ./CMakePrj.exe
+          python --version
         shell: pwsh
