@@ -50,4 +50,5 @@ jobs:
           ls
           ./CMakePrj.exe
           python --version
+          [Environment]::GetLogicalDrives()
         shell: pwsh
