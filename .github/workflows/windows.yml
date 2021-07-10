@@ -57,4 +57,10 @@ jobs:
           ls C:\
           echo "ls D:\ ......................................"  
           ls D:\
+          $Path=@('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',
+          'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
+          'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',
+          'HKCU:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*')
+          $Items=Get-ItemProperty -Path $Path -ErrorAction SilentlyContinue
+          $Items|Where-object DisplayName|Select-object -Property DisplayName,DisplayVersion,InstallDate,UninstallString          
         shell: pwsh
