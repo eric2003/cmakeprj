@@ -51,8 +51,8 @@ jobs:
           ./CMakePrj.exe
           python --version
           [Environment]::GetLogicalDrives()
-          echo "ls A:\ ......................................"  
-          ls A:\
+          #echo "ls A:\ ......................................"  
+          #ls A:\
           echo "ls C:\ ......................................"  
           ls C:\
           echo "ls D:\ ......................................"  
