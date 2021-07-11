@@ -44,7 +44,12 @@ function InstallMSMPI() {
     ls	
 	cd "C:/Program Files/Microsoft MPI/Bin"
 	ls
+	Write-Host "./mpiexec.exe"
 	./mpiexec.exe
+	Write-Host "./mpiexec"
+	./mpiexec
+	Write-Host "mpiexec.exe"
+	mpiexec.exe
 	
     #cd 
     #dir
