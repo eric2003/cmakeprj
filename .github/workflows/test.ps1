@@ -42,7 +42,8 @@ function InstallMSMPI() {
     c:
     cd "C:/Program Files (x86)/Microsoft SDKs/MPI"
     ls	
-	
+	cd "C:/Program Files/Microsoft MPI/Bin"
+	ls
 	#mpiexec
 	
     #cd 
