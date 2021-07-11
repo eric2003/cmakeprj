@@ -24,7 +24,11 @@ function InstallMSMPI() {
     cd mpi_dir
     # install MPI SDK and Runtime
     Write-Host "Installing Microsoft MPI SDK..."
-	$msmpisdk_webfilename = 'https://download.microsoft.com/download/A/E/0/AE002626-9D9D-448D-8197-1EA510E297CE/msmpisdk.msi'
+	$download_url = "https://download.microsoft.com/download/A/E/0/AE002626-9D9D-448D-8197-1EA510E297CE/"
+	$msmpisdk_filename = "msmpisdk.msi"
+	$msmpisdk_webfilename = $download_url + $msmpisdk_filename
+	Write-Host "msmpisdk_webfilename = $msmpisdk_webfilename"
+	#$msmpisdk_webfilename = 'https://download.microsoft.com/download/A/E/0/AE002626-9D9D-448D-8197-1EA510E297CE/msmpisdk.msi'
 	MyDownloadFile( $msmpisdk_webfilename )
 	
     Start-Process -FilePath msiexec.exe -ArgumentList "/quiet /qn /i msmpisdk.msi" -Wait
