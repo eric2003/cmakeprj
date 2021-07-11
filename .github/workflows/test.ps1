@@ -44,7 +44,7 @@ function InstallMSMPI() {
     ls	
 	cd "C:/Program Files/Microsoft MPI/Bin"
 	ls
-	mpiexec
+	./mpiexec.exe
 	
     #cd 
     #dir
