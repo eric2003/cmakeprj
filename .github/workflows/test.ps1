@@ -44,6 +44,9 @@ function InstallMSMPI() {
     ls	
 	cd "C:/Program Files/Microsoft MPI/Bin"
 	ls
+	
+	$Env:path = $Env:Path + ";C:/Program Files/Microsoft MPI/Bin"
+	
 	Write-Host "./mpiexec.exe"
 	./mpiexec.exe
 	Write-Host "./mpiexec"
